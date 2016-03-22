@@ -10,31 +10,31 @@ pub const FMOD_STUDIO_INIT_SYNCHRONOUS_UPDATE: ::std::os::raw::c_uint = 0x000000
 pub const FMOD_STUDIO_INIT_DEFERRED_CALLBACKS: ::std::os::raw::c_uint = 0x00000008;
 
 pub type FMOD_BOOL = ::std::os::raw::c_int;
-pub enum Struct_FMOD_SYSTEM { }
-pub type FMOD_SYSTEM = Struct_FMOD_SYSTEM;
-pub enum Struct_FMOD_SOUND { }
-pub type FMOD_SOUND = Struct_FMOD_SOUND;
-pub enum Struct_FMOD_CHANNELCONTROL { }
-pub type FMOD_CHANNELCONTROL = Struct_FMOD_CHANNELCONTROL;
-pub enum Struct_FMOD_CHANNEL { }
-pub type FMOD_CHANNEL = Struct_FMOD_CHANNEL;
-pub enum Struct_FMOD_CHANNELGROUP { }
-pub type FMOD_CHANNELGROUP = Struct_FMOD_CHANNELGROUP;
-pub enum Struct_FMOD_SOUNDGROUP { }
-pub type FMOD_SOUNDGROUP = Struct_FMOD_SOUNDGROUP;
-pub enum Struct_FMOD_REVERB3D { }
-pub type FMOD_REVERB3D = Struct_FMOD_REVERB3D;
-pub enum Struct_FMOD_DSP { }
-pub type FMOD_DSP = Struct_FMOD_DSP;
-pub enum Struct_FMOD_DSPCONNECTION { }
-pub type FMOD_DSPCONNECTION = Struct_FMOD_DSPCONNECTION;
-pub enum Struct_FMOD_POLYGON { }
-pub type FMOD_POLYGON = Struct_FMOD_POLYGON;
-pub enum Struct_FMOD_GEOMETRY { }
-pub type FMOD_GEOMETRY = Struct_FMOD_GEOMETRY;
-pub enum Struct_FMOD_SYNCPOINT { }
-pub type FMOD_SYNCPOINT = Struct_FMOD_SYNCPOINT;
-pub type FMOD_ASYNCREADINFO = Struct_FMOD_ASYNCREADINFO;
+pub enum FMOD_SYSTEM { }
+
+pub enum FMOD_SOUND { }
+
+pub enum FMOD_CHANNELCONTROL { }
+
+pub enum FMOD_CHANNEL { }
+
+pub enum FMOD_CHANNELGROUP { }
+
+pub enum FMOD_SOUNDGROUP { }
+
+pub enum FMOD_REVERB3D { }
+
+pub enum FMOD_DSP { }
+
+pub enum FMOD_DSPCONNECTION { }
+
+pub enum FMOD_POLYGON { }
+
+pub enum FMOD_GEOMETRY { }
+
+pub enum FMOD_SYNCPOINT { }
+
+
 pub type FMOD_MODE = ::std::os::raw::c_uint;
 pub type FMOD_TIMEUNIT = ::std::os::raw::c_uint;
 pub type FMOD_INITFLAGS = ::std::os::raw::c_uint;
@@ -141,54 +141,52 @@ pub enum FMOD_CHANNELCONTROL_TYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_Unnamed3 {
+pub struct FMOD_VECTOR {
     pub x: ::std::os::raw::c_float,
     pub y: ::std::os::raw::c_float,
     pub z: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_Unnamed3 {
+impl ::std::clone::Clone for FMOD_VECTOR {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_Unnamed3 {
+impl ::std::default::Default for FMOD_VECTOR {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_VECTOR = Struct_Unnamed3;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_3D_ATTRIBUTES {
+pub struct FMOD_3D_ATTRIBUTES {
     pub position: FMOD_VECTOR,
     pub velocity: FMOD_VECTOR,
     pub forward: FMOD_VECTOR,
     pub up: FMOD_VECTOR,
 }
-impl ::std::clone::Clone for Struct_FMOD_3D_ATTRIBUTES {
+impl ::std::clone::Clone for FMOD_3D_ATTRIBUTES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_3D_ATTRIBUTES {
+impl ::std::default::Default for FMOD_3D_ATTRIBUTES {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_3D_ATTRIBUTES = Struct_FMOD_3D_ATTRIBUTES;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_Unnamed4 {
+pub struct FMOD_GUID {
     pub Data1: ::std::os::raw::c_uint,
     pub Data2: ::std::os::raw::c_ushort,
     pub Data3: ::std::os::raw::c_ushort,
     pub Data4: [::std::os::raw::c_uchar; 8usize],
 }
-impl ::std::clone::Clone for Struct_Unnamed4 {
+impl ::std::clone::Clone for FMOD_GUID {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_Unnamed4 {
+impl ::std::default::Default for FMOD_GUID {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_GUID = Struct_Unnamed4;
 pub type FMOD_FILE_ASYNCDONE =
     ::std::option::Option<unsafe extern "C" fn(info: *mut FMOD_ASYNCREADINFO,
                                                result: FMOD_RESULT)>;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_ASYNCREADINFO {
+pub struct FMOD_ASYNCREADINFO {
     pub handle: *mut ::std::os::raw::c_void,
     pub offset: ::std::os::raw::c_uint,
     pub sizebytes: ::std::os::raw::c_uint,
@@ -198,10 +196,10 @@ pub struct Struct_FMOD_ASYNCREADINFO {
     pub bytesread: ::std::os::raw::c_uint,
     pub done: FMOD_FILE_ASYNCDONE,
 }
-impl ::std::clone::Clone for Struct_FMOD_ASYNCREADINFO {
+impl ::std::clone::Clone for FMOD_ASYNCREADINFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_ASYNCREADINFO {
+impl ::std::default::Default for FMOD_ASYNCREADINFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -290,17 +288,17 @@ pub enum FMOD_PLUGINTYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_PLUGINLIST {
+pub struct FMOD_PLUGINLIST {
     pub _type: FMOD_PLUGINTYPE,
     pub description: *mut ::std::os::raw::c_void,
 }
-impl ::std::clone::Clone for Struct_FMOD_PLUGINLIST {
+impl ::std::clone::Clone for FMOD_PLUGINLIST {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_PLUGINLIST {
+impl ::std::default::Default for FMOD_PLUGINLIST {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_PLUGINLIST = Struct_FMOD_PLUGINLIST;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum FMOD_SOUND_TYPE {
@@ -412,20 +410,19 @@ pub enum FMOD_ERRORCALLBACK_INSTANCETYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_Unnamed17 {
+pub struct FMOD_ERRORCALLBACK_INFO {
     pub result: FMOD_RESULT,
     pub instancetype: FMOD_ERRORCALLBACK_INSTANCETYPE,
     pub instance: *mut ::std::os::raw::c_void,
     pub functionname: *const ::std::os::raw::c_char,
     pub functionparams: *const ::std::os::raw::c_char,
 }
-impl ::std::clone::Clone for Struct_Unnamed17 {
+impl ::std::clone::Clone for FMOD_ERRORCALLBACK_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_Unnamed17 {
+impl ::std::default::Default for FMOD_ERRORCALLBACK_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_ERRORCALLBACK_INFO = Struct_Unnamed17;
 pub type FMOD_DEBUG_CALLBACK =
     ::std::option::Option<unsafe extern "C" fn(flags: FMOD_DEBUG_FLAGS,
                                                file:
@@ -603,7 +600,7 @@ pub enum FMOD_TAGDATATYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_TAG {
+pub struct FMOD_TAG {
     pub _type: FMOD_TAGTYPE,
     pub datatype: FMOD_TAGDATATYPE,
     pub name: *mut ::std::os::raw::c_char,
@@ -611,16 +608,16 @@ pub struct Struct_FMOD_TAG {
     pub datalen: ::std::os::raw::c_uint,
     pub updated: FMOD_BOOL,
 }
-impl ::std::clone::Clone for Struct_FMOD_TAG {
+impl ::std::clone::Clone for FMOD_TAG {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_TAG {
+impl ::std::default::Default for FMOD_TAG {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_TAG = Struct_FMOD_TAG;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_CREATESOUNDEXINFO {
+pub struct FMOD_CREATESOUNDEXINFO {
     pub cbsize: ::std::os::raw::c_int,
     pub length: ::std::os::raw::c_uint,
     pub fileoffset: ::std::os::raw::c_uint,
@@ -659,16 +656,16 @@ pub struct Struct_FMOD_CREATESOUNDEXINFO {
     pub nonblockthreadid: ::std::os::raw::c_int,
     pub fsbguid: *mut FMOD_GUID,
 }
-impl ::std::clone::Clone for Struct_FMOD_CREATESOUNDEXINFO {
+impl ::std::clone::Clone for FMOD_CREATESOUNDEXINFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_CREATESOUNDEXINFO {
+impl ::std::default::Default for FMOD_CREATESOUNDEXINFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_CREATESOUNDEXINFO = Struct_FMOD_CREATESOUNDEXINFO;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_REVERB_PROPERTIES {
+pub struct FMOD_REVERB_PROPERTIES {
     pub DecayTime: ::std::os::raw::c_float,
     pub EarlyDelay: ::std::os::raw::c_float,
     pub LateDelay: ::std::os::raw::c_float,
@@ -682,16 +679,16 @@ pub struct Struct_FMOD_REVERB_PROPERTIES {
     pub EarlyLateMix: ::std::os::raw::c_float,
     pub WetLevel: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_REVERB_PROPERTIES {
+impl ::std::clone::Clone for FMOD_REVERB_PROPERTIES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_REVERB_PROPERTIES {
+impl ::std::default::Default for FMOD_REVERB_PROPERTIES {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_REVERB_PROPERTIES = Struct_FMOD_REVERB_PROPERTIES;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_ADVANCEDSETTINGS {
+pub struct FMOD_ADVANCEDSETTINGS {
     pub cbSize: ::std::os::raw::c_int,
     pub maxMPEGCodecs: ::std::os::raw::c_int,
     pub maxADPCMCodecs: ::std::os::raw::c_int,
@@ -720,15 +717,15 @@ pub struct Struct_FMOD_ADVANCEDSETTINGS {
     pub commandQueueSize: ::std::os::raw::c_uint,
     pub randomSeed: ::std::os::raw::c_uint,
 }
-impl ::std::clone::Clone for Struct_FMOD_ADVANCEDSETTINGS {
+impl ::std::clone::Clone for FMOD_ADVANCEDSETTINGS {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_ADVANCEDSETTINGS {
+impl ::std::default::Default for FMOD_ADVANCEDSETTINGS {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_ADVANCEDSETTINGS = Struct_FMOD_ADVANCEDSETTINGS;
-pub type FMOD_CODEC_STATE = Struct_FMOD_CODEC_STATE;
-pub type FMOD_CODEC_WAVEFORMAT = Struct_FMOD_CODEC_WAVEFORMAT;
+
+
+
 pub type FMOD_CODEC_OPEN_CALLBACK =
     ::std::option::Option<unsafe extern "C" fn(codec_state:
                                                    *mut FMOD_CODEC_STATE,
@@ -802,7 +799,7 @@ pub type FMOD_CODEC_GETWAVEFORMAT_CALLBACK =
                               -> FMOD_RESULT>;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_CODEC_DESCRIPTION {
+pub struct FMOD_CODEC_DESCRIPTION {
     pub name: *const ::std::os::raw::c_char,
     pub version: ::std::os::raw::c_uint,
     pub defaultasstream: ::std::os::raw::c_int,
@@ -816,16 +813,16 @@ pub struct Struct_FMOD_CODEC_DESCRIPTION {
     pub soundcreate: FMOD_CODEC_SOUNDCREATE_CALLBACK,
     pub getwaveformat: FMOD_CODEC_GETWAVEFORMAT_CALLBACK,
 }
-impl ::std::clone::Clone for Struct_FMOD_CODEC_DESCRIPTION {
+impl ::std::clone::Clone for FMOD_CODEC_DESCRIPTION {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_CODEC_DESCRIPTION {
+impl ::std::default::Default for FMOD_CODEC_DESCRIPTION {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_CODEC_DESCRIPTION = Struct_FMOD_CODEC_DESCRIPTION;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_CODEC_WAVEFORMAT {
+pub struct FMOD_CODEC_WAVEFORMAT {
     pub name: [::std::os::raw::c_char; 256usize],
     pub format: FMOD_SOUND_FORMAT,
     pub channels: ::std::os::raw::c_int,
@@ -840,15 +837,15 @@ pub struct Struct_FMOD_CODEC_WAVEFORMAT {
     pub channelorder: FMOD_CHANNELORDER,
     pub peakvolume: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_CODEC_WAVEFORMAT {
+impl ::std::clone::Clone for FMOD_CODEC_WAVEFORMAT {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_CODEC_WAVEFORMAT {
+impl ::std::default::Default for FMOD_CODEC_WAVEFORMAT {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_CODEC_STATE {
+pub struct FMOD_CODEC_STATE {
     pub numsubsounds: ::std::os::raw::c_int,
     pub waveformat: *mut FMOD_CODEC_WAVEFORMAT,
     pub plugindata: *mut ::std::os::raw::c_void,
@@ -859,10 +856,10 @@ pub struct Struct_FMOD_CODEC_STATE {
     pub metadata: FMOD_CODEC_METADATA_CALLBACK,
     pub waveformatversion: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_CODEC_STATE {
+impl ::std::clone::Clone for FMOD_CODEC_STATE {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_CODEC_STATE {
+impl ::std::default::Default for FMOD_CODEC_STATE {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -1283,23 +1280,23 @@ pub enum FMOD_DSP_OBJECTPAN {
     FMOD_DSP_OBJECTPAN_OUTPUTGAIN = 8,
 }
 
-pub type FMOD_DSP_STATE = Struct_FMOD_DSP_STATE;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_BUFFER_ARRAY {
+pub struct FMOD_DSP_BUFFER_ARRAY {
     pub numbuffers: ::std::os::raw::c_int,
     pub buffernumchannels: *mut ::std::os::raw::c_int,
     pub bufferchannelmask: *mut FMOD_CHANNELMASK,
     pub buffers: *mut *mut ::std::os::raw::c_float,
     pub speakermode: FMOD_SPEAKERMODE,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_BUFFER_ARRAY {
+impl ::std::clone::Clone for FMOD_DSP_BUFFER_ARRAY {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_BUFFER_ARRAY {
+impl ::std::default::Default for FMOD_DSP_BUFFER_ARRAY {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_BUFFER_ARRAY = Struct_FMOD_DSP_BUFFER_ARRAY;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum FMOD_DSP_PROCESS_OPERATION {
@@ -1309,17 +1306,17 @@ pub enum FMOD_DSP_PROCESS_OPERATION {
 
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_COMPLEX {
+pub struct FMOD_COMPLEX {
     pub real: ::std::os::raw::c_float,
     pub imag: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_COMPLEX {
+impl ::std::clone::Clone for FMOD_COMPLEX {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_COMPLEX {
+impl ::std::default::Default for FMOD_COMPLEX {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_COMPLEX = Struct_FMOD_COMPLEX;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum FMOD_DSP_PAN_SURROUND_FLAGS {
@@ -1604,101 +1601,97 @@ pub enum FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE {
 
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
+pub struct FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
     pub numpoints: ::std::os::raw::c_int,
     pub pointparamvalues: *mut ::std::os::raw::c_float,
     pub pointpositions: *mut ::std::os::raw::c_float,
 }
 impl ::std::clone::Clone for
- Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
+ FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
     fn clone(&self) -> Self { *self }
 }
 impl ::std::default::Default for
- Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
+ FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR =
-    Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING {
+pub struct FMOD_DSP_PARAMETER_FLOAT_MAPPING {
     pub _type: FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE,
     pub piecewiselinearmapping: FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_FLOAT_MAPPING {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_FLOAT_MAPPING {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_FLOAT_MAPPING =
-    Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_DESC_FLOAT {
+pub struct FMOD_DSP_PARAMETER_DESC_FLOAT {
     pub min: ::std::os::raw::c_float,
     pub max: ::std::os::raw::c_float,
     pub defaultval: ::std::os::raw::c_float,
     pub mapping: FMOD_DSP_PARAMETER_FLOAT_MAPPING,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_DESC_FLOAT {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_DESC_FLOAT {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC_FLOAT {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_DESC_FLOAT {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_DESC_FLOAT = Struct_FMOD_DSP_PARAMETER_DESC_FLOAT;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_DESC_INT {
+pub struct FMOD_DSP_PARAMETER_DESC_INT {
     pub min: ::std::os::raw::c_int,
     pub max: ::std::os::raw::c_int,
     pub defaultval: ::std::os::raw::c_int,
     pub goestoinf: FMOD_BOOL,
     pub valuenames: *const *const ::std::os::raw::c_char,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_DESC_INT {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_DESC_INT {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC_INT {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_DESC_INT {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_DESC_INT = Struct_FMOD_DSP_PARAMETER_DESC_INT;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_DESC_BOOL {
+pub struct FMOD_DSP_PARAMETER_DESC_BOOL {
     pub defaultval: FMOD_BOOL,
     pub valuenames: *const *const ::std::os::raw::c_char,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_DESC_BOOL {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_DESC_BOOL {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC_BOOL {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_DESC_BOOL {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_DESC_BOOL = Struct_FMOD_DSP_PARAMETER_DESC_BOOL;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_DESC_DATA {
+pub struct FMOD_DSP_PARAMETER_DESC_DATA {
     pub datatype: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_DESC_DATA {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_DESC_DATA {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC_DATA {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_DESC_DATA {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_DESC_DATA = Struct_FMOD_DSP_PARAMETER_DESC_DATA;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_DESC {
+pub struct FMOD_DSP_PARAMETER_DESC {
     pub _type: FMOD_DSP_PARAMETER_TYPE,
     pub name: [::std::os::raw::c_char; 16usize],
     pub label: [::std::os::raw::c_char; 16usize],
     pub description: *const ::std::os::raw::c_char,
     pub _bindgen_data_1_: [u64; 6usize],
 }
-impl Struct_FMOD_DSP_PARAMETER_DESC {
+impl FMOD_DSP_PARAMETER_DESC {
     pub unsafe fn floatdesc(&mut self) -> *mut FMOD_DSP_PARAMETER_DESC_FLOAT {
         let raw: *mut u8 = ::std::mem::transmute(&self._bindgen_data_1_);
         ::std::mem::transmute(raw.offset(0))
@@ -1716,13 +1709,13 @@ impl Struct_FMOD_DSP_PARAMETER_DESC {
         ::std::mem::transmute(raw.offset(0))
     }
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_DESC {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_DESC {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_DESC {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_DESC = Struct_FMOD_DSP_PARAMETER_DESC;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(i32)]
 pub enum FMOD_DSP_PARAMETER_DATA_TYPE {
@@ -1736,77 +1729,72 @@ pub enum FMOD_DSP_PARAMETER_DATA_TYPE {
 
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_OVERALLGAIN {
+pub struct FMOD_DSP_PARAMETER_OVERALLGAIN {
     pub linear_gain: ::std::os::raw::c_float,
     pub linear_gain_additive: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_OVERALLGAIN {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_OVERALLGAIN {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_OVERALLGAIN {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_OVERALLGAIN {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_OVERALLGAIN =
-    Struct_FMOD_DSP_PARAMETER_OVERALLGAIN;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES {
+pub struct FMOD_DSP_PARAMETER_3DATTRIBUTES {
     pub relative: FMOD_3D_ATTRIBUTES,
     pub absolute: FMOD_3D_ATTRIBUTES,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_3DATTRIBUTES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_3DATTRIBUTES {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_3DATTRIBUTES =
-    Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI {
+pub struct FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI {
     pub numlisteners: ::std::os::raw::c_int,
     pub relative: [FMOD_3D_ATTRIBUTES; 8usize],
     pub absolute: FMOD_3D_ATTRIBUTES,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI
+impl ::std::default::Default for FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI
  {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI =
-    Struct_FMOD_DSP_PARAMETER_3DATTRIBUTES_MULTI;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_SIDECHAIN {
+pub struct FMOD_DSP_PARAMETER_SIDECHAIN {
     pub sidechainenable: FMOD_BOOL,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_SIDECHAIN {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_SIDECHAIN {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_SIDECHAIN {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_SIDECHAIN {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_SIDECHAIN = Struct_FMOD_DSP_PARAMETER_SIDECHAIN;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_PARAMETER_FFT {
+pub struct FMOD_DSP_PARAMETER_FFT {
     pub length: ::std::os::raw::c_int,
     pub numchannels: ::std::os::raw::c_int,
     pub spectrum: [*mut ::std::os::raw::c_float; 32usize],
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_PARAMETER_FFT {
+impl ::std::clone::Clone for FMOD_DSP_PARAMETER_FFT {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_FFT {
+impl ::std::default::Default for FMOD_DSP_PARAMETER_FFT {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_PARAMETER_FFT = Struct_FMOD_DSP_PARAMETER_FFT;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_DESCRIPTION {
+pub struct FMOD_DSP_DESCRIPTION {
     pub pluginsdkversion: ::std::os::raw::c_uint,
     pub name: [::std::os::raw::c_char; 32usize],
     pub version: ::std::os::raw::c_uint,
@@ -1834,29 +1822,29 @@ pub struct Struct_FMOD_DSP_DESCRIPTION {
     pub sys_deregister: FMOD_DSP_SYSTEM_DEREGISTER_CALLBACK,
     pub sys_mix: FMOD_DSP_SYSTEM_MIX_CALLBACK,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_DESCRIPTION {
+impl ::std::clone::Clone for FMOD_DSP_DESCRIPTION {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_DESCRIPTION {
+impl ::std::default::Default for FMOD_DSP_DESCRIPTION {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_DESCRIPTION = Struct_FMOD_DSP_DESCRIPTION;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_STATE_DFTCALLBACKS {
+pub struct FMOD_DSP_STATE_DFTCALLBACKS {
     pub fftreal: FMOD_DSP_DFT_FFTREAL,
     pub inversefftreal: FMOD_DSP_DFT_IFFTREAL,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_STATE_DFTCALLBACKS {
+impl ::std::clone::Clone for FMOD_DSP_STATE_DFTCALLBACKS {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_STATE_DFTCALLBACKS {
+impl ::std::default::Default for FMOD_DSP_STATE_DFTCALLBACKS {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_STATE_DFTCALLBACKS = Struct_FMOD_DSP_STATE_DFTCALLBACKS;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_STATE_PAN_CALLBACKS {
+pub struct FMOD_DSP_STATE_PAN_CALLBACKS {
     pub summonomatrix: FMOD_DSP_PAN_SUM_MONO_MATRIX,
     pub sumstereomatrix: FMOD_DSP_PAN_SUM_STEREO_MATRIX,
     pub sumsurroundmatrix: FMOD_DSP_PAN_SUM_SURROUND_MATRIX,
@@ -1864,16 +1852,16 @@ pub struct Struct_FMOD_DSP_STATE_PAN_CALLBACKS {
     pub sumstereotosurroundmatrix: FMOD_DSP_PAN_SUM_STEREO_TO_SURROUND_MATRIX,
     pub getrolloffgain: FMOD_DSP_PAN_3D_GET_ROLLOFF_GAIN,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_STATE_PAN_CALLBACKS {
+impl ::std::clone::Clone for FMOD_DSP_STATE_PAN_CALLBACKS {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_STATE_PAN_CALLBACKS {
+impl ::std::default::Default for FMOD_DSP_STATE_PAN_CALLBACKS {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_STATE_PAN_CALLBACKS = Struct_FMOD_DSP_STATE_PAN_CALLBACKS;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_STATE_SYSTEMCALLBACKS {
+pub struct FMOD_DSP_STATE_SYSTEMCALLBACKS {
     pub alloc: FMOD_MEMORY_ALLOC_CALLBACK,
     pub realloc: FMOD_MEMORY_REALLOC_CALLBACK,
     pub free: FMOD_MEMORY_FREE_CALLBACK,
@@ -1884,17 +1872,15 @@ pub struct Struct_FMOD_DSP_STATE_SYSTEMCALLBACKS {
     pub getspeakermode: FMOD_DSP_SYSTEM_GETSPEAKERMODE,
     pub getclock: FMOD_DSP_STATE_GETCLOCK,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_STATE_SYSTEMCALLBACKS {
+impl ::std::clone::Clone for FMOD_DSP_STATE_SYSTEMCALLBACKS {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_STATE_SYSTEMCALLBACKS {
+impl ::std::default::Default for FMOD_DSP_STATE_SYSTEMCALLBACKS {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_STATE_SYSTEMCALLBACKS =
-    Struct_FMOD_DSP_STATE_SYSTEMCALLBACKS;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_STATE {
+pub struct FMOD_DSP_STATE {
     pub instance: *mut FMOD_DSP,
     pub plugindata: *mut ::std::os::raw::c_void,
     pub channelmask: FMOD_CHANNELMASK,
@@ -1904,29 +1890,29 @@ pub struct Struct_FMOD_DSP_STATE {
     pub callbacks: *mut FMOD_DSP_STATE_SYSTEMCALLBACKS,
     pub systemobject: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_STATE {
+impl ::std::clone::Clone for FMOD_DSP_STATE {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_STATE {
+impl ::std::default::Default for FMOD_DSP_STATE {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_DSP_METERING_INFO {
+pub struct FMOD_DSP_METERING_INFO {
     pub numsamples: ::std::os::raw::c_int,
     pub peaklevel: [::std::os::raw::c_float; 32usize],
     pub rmslevel: [::std::os::raw::c_float; 32usize],
     pub numchannels: ::std::os::raw::c_short,
 }
-impl ::std::clone::Clone for Struct_FMOD_DSP_METERING_INFO {
+impl ::std::clone::Clone for FMOD_DSP_METERING_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_DSP_METERING_INFO {
+impl ::std::default::Default for FMOD_DSP_METERING_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_DSP_METERING_INFO = Struct_FMOD_DSP_METERING_INFO;
-pub type FMOD_OUTPUT_STATE = Struct_FMOD_OUTPUT_STATE;
-pub type FMOD_OUTPUT_OBJECT3DINFO = Struct_FMOD_OUTPUT_OBJECT3DINFO;
+
+
+
 pub type FMOD_OUTPUT_GETNUMDRIVERS_CALLBACK =
     ::std::option::Option<unsafe extern "C" fn(output_state:
                                                    *mut FMOD_OUTPUT_STATE,
@@ -2082,7 +2068,7 @@ pub type FMOD_OUTPUT_LOG =
                                                    *const ::std::os::raw::c_char, ...)>;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_OUTPUT_DESCRIPTION {
+pub struct FMOD_OUTPUT_DESCRIPTION {
     pub apiversion: ::std::os::raw::c_uint,
     pub name: *const ::std::os::raw::c_char,
     pub version: ::std::os::raw::c_uint,
@@ -2104,31 +2090,31 @@ pub struct Struct_FMOD_OUTPUT_DESCRIPTION {
     pub object3dfree: FMOD_OUTPUT_OBJECT3DFREE_CALLBACK,
     pub object3dupdate: FMOD_OUTPUT_OBJECT3DUPDATE_CALLBACK,
 }
-impl ::std::clone::Clone for Struct_FMOD_OUTPUT_DESCRIPTION {
+impl ::std::clone::Clone for FMOD_OUTPUT_DESCRIPTION {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_OUTPUT_DESCRIPTION {
+impl ::std::default::Default for FMOD_OUTPUT_DESCRIPTION {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_OUTPUT_DESCRIPTION = Struct_FMOD_OUTPUT_DESCRIPTION;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_OUTPUT_STATE {
+pub struct FMOD_OUTPUT_STATE {
     pub plugindata: *mut ::std::os::raw::c_void,
     pub readfrommixer: FMOD_OUTPUT_READFROMMIXER,
     pub alloc: FMOD_OUTPUT_ALLOC,
     pub free: FMOD_OUTPUT_FREE,
     pub log: FMOD_OUTPUT_LOG,
 }
-impl ::std::clone::Clone for Struct_FMOD_OUTPUT_STATE {
+impl ::std::clone::Clone for FMOD_OUTPUT_STATE {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_OUTPUT_STATE {
+impl ::std::default::Default for FMOD_OUTPUT_STATE {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_OUTPUT_OBJECT3DINFO {
+pub struct FMOD_OUTPUT_OBJECT3DINFO {
     pub buffer: *mut ::std::os::raw::c_float,
     pub bufferlength: ::std::os::raw::c_uint,
     pub position: FMOD_VECTOR,
@@ -2136,28 +2122,28 @@ pub struct Struct_FMOD_OUTPUT_OBJECT3DINFO {
     pub spread: ::std::os::raw::c_float,
     pub priority: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_OUTPUT_OBJECT3DINFO {
+impl ::std::clone::Clone for FMOD_OUTPUT_OBJECT3DINFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_OUTPUT_OBJECT3DINFO {
+impl ::std::default::Default for FMOD_OUTPUT_OBJECT3DINFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub enum Struct_FMOD_STUDIO_SYSTEM { }
-pub type FMOD_STUDIO_SYSTEM = Struct_FMOD_STUDIO_SYSTEM;
-pub enum Struct_FMOD_STUDIO_EVENTDESCRIPTION { }
-pub type FMOD_STUDIO_EVENTDESCRIPTION = Struct_FMOD_STUDIO_EVENTDESCRIPTION;
-pub enum Struct_FMOD_STUDIO_EVENTINSTANCE { }
-pub type FMOD_STUDIO_EVENTINSTANCE = Struct_FMOD_STUDIO_EVENTINSTANCE;
-pub enum Struct_FMOD_STUDIO_PARAMETERINSTANCE { }
-pub type FMOD_STUDIO_PARAMETERINSTANCE = Struct_FMOD_STUDIO_PARAMETERINSTANCE;
-pub enum Struct_FMOD_STUDIO_BUS { }
-pub type FMOD_STUDIO_BUS = Struct_FMOD_STUDIO_BUS;
-pub enum Struct_FMOD_STUDIO_VCA { }
-pub type FMOD_STUDIO_VCA = Struct_FMOD_STUDIO_VCA;
-pub enum Struct_FMOD_STUDIO_BANK { }
-pub type FMOD_STUDIO_BANK = Struct_FMOD_STUDIO_BANK;
-pub enum Struct_FMOD_STUDIO_COMMANDREPLAY { }
-pub type FMOD_STUDIO_COMMANDREPLAY = Struct_FMOD_STUDIO_COMMANDREPLAY;
+pub enum FMOD_STUDIO_SYSTEM { }
+
+pub enum FMOD_STUDIO_EVENTDESCRIPTION { }
+
+pub enum FMOD_STUDIO_EVENTINSTANCE { }
+
+pub enum FMOD_STUDIO_PARAMETERINSTANCE { }
+
+pub enum FMOD_STUDIO_BUS { }
+
+pub enum FMOD_STUDIO_VCA { }
+
+pub enum FMOD_STUDIO_BANK { }
+
+pub enum FMOD_STUDIO_COMMANDREPLAY { }
+
 pub type FMOD_STUDIO_INITFLAGS = ::std::os::raw::c_uint;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
@@ -2191,7 +2177,7 @@ pub enum FMOD_STUDIO_PARAMETER_TYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_BANK_INFO {
+pub struct FMOD_STUDIO_BANK_INFO {
     pub size: ::std::os::raw::c_int,
     pub userData: *mut ::std::os::raw::c_void,
     pub userDataLength: ::std::os::raw::c_int,
@@ -2200,16 +2186,16 @@ pub struct Struct_FMOD_STUDIO_BANK_INFO {
     pub readCallback: FMOD_FILE_READ_CALLBACK,
     pub seekCallback: FMOD_FILE_SEEK_CALLBACK,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_BANK_INFO {
+impl ::std::clone::Clone for FMOD_STUDIO_BANK_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_BANK_INFO {
+impl ::std::default::Default for FMOD_STUDIO_BANK_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_BANK_INFO = Struct_FMOD_STUDIO_BANK_INFO;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_PARAMETER_DESCRIPTION {
+pub struct FMOD_STUDIO_PARAMETER_DESCRIPTION {
     pub name: *const ::std::os::raw::c_char,
     pub index: ::std::os::raw::c_int,
     pub minimum: ::std::os::raw::c_float,
@@ -2217,14 +2203,12 @@ pub struct Struct_FMOD_STUDIO_PARAMETER_DESCRIPTION {
     pub defaultValue: ::std::os::raw::c_float,
     pub _type: FMOD_STUDIO_PARAMETER_TYPE,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_PARAMETER_DESCRIPTION {
+impl ::std::clone::Clone for FMOD_STUDIO_PARAMETER_DESCRIPTION {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_PARAMETER_DESCRIPTION {
+impl ::std::default::Default for FMOD_STUDIO_PARAMETER_DESCRIPTION {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_PARAMETER_DESCRIPTION =
-    Struct_FMOD_STUDIO_PARAMETER_DESCRIPTION;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum FMOD_STUDIO_USER_PROPERTY_TYPE {
@@ -2247,12 +2231,12 @@ pub enum FMOD_STUDIO_EVENT_PROPERTY {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_USER_PROPERTY {
+pub struct FMOD_STUDIO_USER_PROPERTY {
     pub name: *const ::std::os::raw::c_char,
     pub _type: FMOD_STUDIO_USER_PROPERTY_TYPE,
     pub _bindgen_data_1_: [u64; 1usize],
 }
-impl Struct_FMOD_STUDIO_USER_PROPERTY {
+impl FMOD_STUDIO_USER_PROPERTY {
     pub unsafe fn intValue(&mut self) -> *mut ::std::os::raw::c_int {
         let raw: *mut u8 = ::std::mem::transmute(&self._bindgen_data_1_);
         ::std::mem::transmute(raw.offset(0))
@@ -2271,64 +2255,58 @@ impl Struct_FMOD_STUDIO_USER_PROPERTY {
         ::std::mem::transmute(raw.offset(0))
     }
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_USER_PROPERTY {
+impl ::std::clone::Clone for FMOD_STUDIO_USER_PROPERTY {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_USER_PROPERTY {
+impl ::std::default::Default for FMOD_STUDIO_USER_PROPERTY {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_USER_PROPERTY = Struct_FMOD_STUDIO_USER_PROPERTY;
+
 pub type FMOD_STUDIO_SYSTEM_CALLBACK_TYPE = ::std::os::raw::c_uint;
 pub type FMOD_STUDIO_EVENT_CALLBACK_TYPE = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
+pub struct FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
     pub name: *const ::std::os::raw::c_char,
     pub sound: *mut FMOD_SOUND,
     pub subsoundIndex: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
+impl ::std::clone::Clone for FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
     fn clone(&self) -> Self { *self }
 }
 impl ::std::default::Default for
- Struct_FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
+ FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES =
-    Struct_FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES {
+pub struct FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES {
     pub name: *const ::std::os::raw::c_char,
     pub dsp: *mut FMOD_DSP,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES {
+impl ::std::clone::Clone for FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES
+impl ::std::default::Default for FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES
  {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES =
-    Struct_FMOD_STUDIO_PLUGIN_INSTANCE_PROPERTIES;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES {
+pub struct FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES {
     pub name: *const ::std::os::raw::c_char,
     pub position: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES {
+impl ::std::clone::Clone for FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES
+impl ::std::default::Default for FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES
  {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES =
-    Struct_FMOD_STUDIO_TIMELINE_MARKER_PROPERTIES;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
+pub struct FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
     pub bar: ::std::os::raw::c_int,
     pub beat: ::std::os::raw::c_int,
     pub position: ::std::os::raw::c_int,
@@ -2336,14 +2314,12 @@ pub struct Struct_FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
     pub timeSignatureUpper: ::std::os::raw::c_int,
     pub timeSignatureLower: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
+impl ::std::clone::Clone for FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
+impl ::std::default::Default for FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES =
-    Struct_FMOD_STUDIO_TIMELINE_BEAT_PROPERTIES;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum FMOD_STUDIO_PLAYBACK_STATE {
@@ -2364,80 +2340,80 @@ pub enum FMOD_STUDIO_STOP_MODE {
 pub type FMOD_STUDIO_LOAD_BANK_FLAGS = ::std::os::raw::c_uint;
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_ADVANCEDSETTINGS {
+pub struct FMOD_STUDIO_ADVANCEDSETTINGS {
     pub cbSize: ::std::os::raw::c_int,
     pub commandQueueSize: ::std::os::raw::c_uint,
     pub handleInitialSize: ::std::os::raw::c_uint,
     pub studioUpdatePeriod: ::std::os::raw::c_int,
     pub idleSampleDataPoolSize: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_ADVANCEDSETTINGS {
+impl ::std::clone::Clone for FMOD_STUDIO_ADVANCEDSETTINGS {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_ADVANCEDSETTINGS {
+impl ::std::default::Default for FMOD_STUDIO_ADVANCEDSETTINGS {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_ADVANCEDSETTINGS = Struct_FMOD_STUDIO_ADVANCEDSETTINGS;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_CPU_USAGE {
+pub struct FMOD_STUDIO_CPU_USAGE {
     pub dspUsage: ::std::os::raw::c_float,
     pub streamUsage: ::std::os::raw::c_float,
     pub geometryUsage: ::std::os::raw::c_float,
     pub updateUsage: ::std::os::raw::c_float,
     pub studioUsage: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_CPU_USAGE {
+impl ::std::clone::Clone for FMOD_STUDIO_CPU_USAGE {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_CPU_USAGE {
+impl ::std::default::Default for FMOD_STUDIO_CPU_USAGE {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_CPU_USAGE = Struct_FMOD_STUDIO_CPU_USAGE;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_BUFFER_INFO {
+pub struct FMOD_STUDIO_BUFFER_INFO {
     pub currentUsage: ::std::os::raw::c_int,
     pub peakUsage: ::std::os::raw::c_int,
     pub capacity: ::std::os::raw::c_int,
     pub stallCount: ::std::os::raw::c_int,
     pub stallTime: ::std::os::raw::c_float,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_BUFFER_INFO {
+impl ::std::clone::Clone for FMOD_STUDIO_BUFFER_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_BUFFER_INFO {
+impl ::std::default::Default for FMOD_STUDIO_BUFFER_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_BUFFER_INFO = Struct_FMOD_STUDIO_BUFFER_INFO;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_BUFFER_USAGE {
+pub struct FMOD_STUDIO_BUFFER_USAGE {
     pub studioCommandQueue: FMOD_STUDIO_BUFFER_INFO,
     pub studioHandle: FMOD_STUDIO_BUFFER_INFO,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_BUFFER_USAGE {
+impl ::std::clone::Clone for FMOD_STUDIO_BUFFER_USAGE {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_BUFFER_USAGE {
+impl ::std::default::Default for FMOD_STUDIO_BUFFER_USAGE {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_BUFFER_USAGE = Struct_FMOD_STUDIO_BUFFER_USAGE;
+
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_SOUND_INFO {
+pub struct FMOD_STUDIO_SOUND_INFO {
     pub name_or_data: *const ::std::os::raw::c_char,
     pub mode: FMOD_MODE,
     pub exinfo: FMOD_CREATESOUNDEXINFO,
     pub subsoundIndex: ::std::os::raw::c_int,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_SOUND_INFO {
+impl ::std::clone::Clone for FMOD_STUDIO_SOUND_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_SOUND_INFO {
+impl ::std::default::Default for FMOD_STUDIO_SOUND_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_SOUND_INFO = Struct_FMOD_STUDIO_SOUND_INFO;
+
 pub type FMOD_STUDIO_COMMANDCAPTURE_FLAGS = ::std::os::raw::c_uint;
 pub type FMOD_STUDIO_COMMANDREPLAY_FLAGS = ::std::os::raw::c_uint;
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -2456,7 +2432,7 @@ pub enum FMOD_STUDIO_INSTANCETYPE {
 }
 #[repr(C)]
 #[derive(Copy)]
-pub struct Struct_FMOD_STUDIO_COMMAND_INFO {
+pub struct FMOD_STUDIO_COMMAND_INFO {
     pub commandName: *const ::std::os::raw::c_char,
     pub parentCommandIndex: ::std::os::raw::c_int,
     pub frameNumber: ::std::os::raw::c_int,
@@ -2466,13 +2442,13 @@ pub struct Struct_FMOD_STUDIO_COMMAND_INFO {
     pub instanceHandle: ::std::os::raw::c_uint,
     pub outputHandle: ::std::os::raw::c_uint,
 }
-impl ::std::clone::Clone for Struct_FMOD_STUDIO_COMMAND_INFO {
+impl ::std::clone::Clone for FMOD_STUDIO_COMMAND_INFO {
     fn clone(&self) -> Self { *self }
 }
-impl ::std::default::Default for Struct_FMOD_STUDIO_COMMAND_INFO {
+impl ::std::default::Default for FMOD_STUDIO_COMMAND_INFO {
     fn default() -> Self { unsafe { ::std::mem::zeroed() } }
 }
-pub type FMOD_STUDIO_COMMAND_INFO = Struct_FMOD_STUDIO_COMMAND_INFO;
+
 pub type FMOD_STUDIO_SYSTEM_CALLBACK =
     ::std::option::Option<unsafe extern "C" fn(system:
                                                    *mut FMOD_STUDIO_SYSTEM,
