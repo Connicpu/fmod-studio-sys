@@ -958,51 +958,50 @@ pub enum FMOD_DSP_NORMALIZE {
 }
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed31 {
+pub enum FMOD_DSP_LIMITER {
     FMOD_DSP_LIMITER_RELEASETIME = 0,
     FMOD_DSP_LIMITER_CEILING = 1,
     FMOD_DSP_LIMITER_MAXIMIZERGAIN = 2,
     FMOD_DSP_LIMITER_MODE = 3,
 }
-pub type FMOD_DSP_LIMITER = Enum_Unnamed31;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed32 {
+pub enum FMOD_DSP_PARAMEQ {
     FMOD_DSP_PARAMEQ_CENTER = 0,
     FMOD_DSP_PARAMEQ_BANDWIDTH = 1,
     FMOD_DSP_PARAMEQ_GAIN = 2,
 }
-pub type FMOD_DSP_PARAMEQ = Enum_Unnamed32;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed33 {
+pub enum FMOD_DSP_PITCHSHIFT {
     FMOD_DSP_PITCHSHIFT_PITCH = 0,
     FMOD_DSP_PITCHSHIFT_FFTSIZE = 1,
     FMOD_DSP_PITCHSHIFT_OVERLAP = 2,
     FMOD_DSP_PITCHSHIFT_MAXCHANNELS = 3,
 }
-pub type FMOD_DSP_PITCHSHIFT = Enum_Unnamed33;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed34 {
+pub enum FMOD_DSP_CHORUS {
     FMOD_DSP_CHORUS_MIX = 0,
     FMOD_DSP_CHORUS_RATE = 1,
     FMOD_DSP_CHORUS_DEPTH = 2,
 }
-pub type FMOD_DSP_CHORUS = Enum_Unnamed34;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed35 {
+pub enum FMOD_DSP_ITECHO {
     FMOD_DSP_ITECHO_WETDRYMIX = 0,
     FMOD_DSP_ITECHO_FEEDBACK = 1,
     FMOD_DSP_ITECHO_LEFTDELAY = 2,
     FMOD_DSP_ITECHO_RIGHTDELAY = 3,
     FMOD_DSP_ITECHO_PANDELAY = 4,
 }
-pub type FMOD_DSP_ITECHO = Enum_Unnamed35;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed36 {
+pub enum FMOD_DSP_COMPRESSOR {
     FMOD_DSP_COMPRESSOR_THRESHOLD = 0,
     FMOD_DSP_COMPRESSOR_RATIO = 1,
     FMOD_DSP_COMPRESSOR_ATTACK = 2,
@@ -1011,10 +1010,10 @@ pub enum Enum_Unnamed36 {
     FMOD_DSP_COMPRESSOR_USESIDECHAIN = 5,
     FMOD_DSP_COMPRESSOR_LINKED = 6,
 }
-pub type FMOD_DSP_COMPRESSOR = Enum_Unnamed36;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed37 {
+pub enum FMOD_DSP_SFXREVERB {
     FMOD_DSP_SFXREVERB_DECAYTIME = 0,
     FMOD_DSP_SFXREVERB_EARLYDELAY = 1,
     FMOD_DSP_SFXREVERB_LATEDELAY = 2,
@@ -1029,14 +1028,14 @@ pub enum Enum_Unnamed37 {
     FMOD_DSP_SFXREVERB_WETLEVEL = 11,
     FMOD_DSP_SFXREVERB_DRYLEVEL = 12,
 }
-pub type FMOD_DSP_SFXREVERB = Enum_Unnamed37;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed38 { FMOD_DSP_LOWPASS_SIMPLE_CUTOFF = 0, }
-pub type FMOD_DSP_LOWPASS_SIMPLE = Enum_Unnamed38;
+pub enum FMOD_DSP_LOWPASS_SIMPLE { FMOD_DSP_LOWPASS_SIMPLE_CUTOFF = 0, }
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed39 {
+pub enum FMOD_DSP_DELAY {
     FMOD_DSP_DELAY_CH0 = 0,
     FMOD_DSP_DELAY_CH1 = 1,
     FMOD_DSP_DELAY_CH2 = 2,
@@ -1055,10 +1054,10 @@ pub enum Enum_Unnamed39 {
     FMOD_DSP_DELAY_CH15 = 15,
     FMOD_DSP_DELAY_MAXDELAY = 16,
 }
-pub type FMOD_DSP_DELAY = Enum_Unnamed39;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed40 {
+pub enum FMOD_DSP_TREMOLO {
     FMOD_DSP_TREMOLO_FREQUENCY = 0,
     FMOD_DSP_TREMOLO_DEPTH = 1,
     FMOD_DSP_TREMOLO_SHAPE = 2,
@@ -1068,61 +1067,61 @@ pub enum Enum_Unnamed40 {
     FMOD_DSP_TREMOLO_PHASE = 6,
     FMOD_DSP_TREMOLO_SPREAD = 7,
 }
-pub type FMOD_DSP_TREMOLO = Enum_Unnamed40;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed41 {
+pub enum FMOD_DSP_SEND {
     FMOD_DSP_SEND_RETURNID = 0,
     FMOD_DSP_SEND_LEVEL = 1,
 }
-pub type FMOD_DSP_SEND = Enum_Unnamed41;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed42 {
+pub enum FMOD_DSP_RETURN {
     FMOD_DSP_RETURN_ID = 0,
     FMOD_DSP_RETURN_INPUT_SPEAKER_MODE = 1,
 }
-pub type FMOD_DSP_RETURN = Enum_Unnamed42;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed43 { FMOD_DSP_HIGHPASS_SIMPLE_CUTOFF = 0, }
-pub type FMOD_DSP_HIGHPASS_SIMPLE = Enum_Unnamed43;
+pub enum FMOD_DSP_HIGHPASS_SIMPLE { FMOD_DSP_HIGHPASS_SIMPLE_CUTOFF = 0, }
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed44 {
+pub enum FMOD_DSP_PAN_SURROUND_FROM_STEREO_MODE_TYPE {
     FMOD_DSP_PAN_SURROUND_FROM_STEREO_MODE_DISTRIBUTED = 0,
     FMOD_DSP_PAN_SURROUND_FROM_STEREO_MODE_DISCRETE = 1,
 }
-pub type FMOD_DSP_PAN_SURROUND_FROM_STEREO_MODE_TYPE = Enum_Unnamed44;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed45 {
+pub enum FMOD_DSP_PAN_MODE_TYPE {
     FMOD_DSP_PAN_MODE_MONO = 0,
     FMOD_DSP_PAN_MODE_STEREO = 1,
     FMOD_DSP_PAN_MODE_SURROUND = 2,
 }
-pub type FMOD_DSP_PAN_MODE_TYPE = Enum_Unnamed45;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed46 {
+pub enum FMOD_DSP_PAN_3D_ROLLOFF_TYPE {
     FMOD_DSP_PAN_3D_ROLLOFF_LINEARSQUARED = 0,
     FMOD_DSP_PAN_3D_ROLLOFF_LINEAR = 1,
     FMOD_DSP_PAN_3D_ROLLOFF_INVERSE = 2,
     FMOD_DSP_PAN_3D_ROLLOFF_INVERSETAPERED = 3,
     FMOD_DSP_PAN_3D_ROLLOFF_CUSTOM = 4,
 }
-pub type FMOD_DSP_PAN_3D_ROLLOFF_TYPE = Enum_Unnamed46;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed47 {
+pub enum FMOD_DSP_PAN_3D_EXTENT_MODE_TYPE {
     FMOD_DSP_PAN_3D_EXTENT_MODE_AUTO = 0,
     FMOD_DSP_PAN_3D_EXTENT_MODE_USER = 1,
     FMOD_DSP_PAN_3D_EXTENT_MODE_OFF = 2,
 }
-pub type FMOD_DSP_PAN_3D_EXTENT_MODE_TYPE = Enum_Unnamed47;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed48 {
+pub enum FMOD_DSP_PAN {
     FMOD_DSP_PAN_MODE = 0,
     FMOD_DSP_PAN_STEREO_POSITION = 1,
     FMOD_DSP_PAN_SURROUND_DIRECTION = 2,
@@ -1145,18 +1144,18 @@ pub enum Enum_Unnamed48 {
     FMOD_DSP_PAN_OVERALL_GAIN = 19,
     FMOD_DSP_PAN_SURROUND_SPEAKER_MODE = 20,
 }
-pub type FMOD_DSP_PAN = Enum_Unnamed48;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed49 {
+pub enum FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_TYPE {
     FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_12DB = 0,
     FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_24DB = 1,
     FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_48DB = 2,
 }
-pub type FMOD_DSP_THREE_EQ_CROSSOVERSLOPE_TYPE = Enum_Unnamed49;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed50 {
+pub enum FMOD_DSP_THREE_EQ {
     FMOD_DSP_THREE_EQ_LOWGAIN = 0,
     FMOD_DSP_THREE_EQ_MIDGAIN = 1,
     FMOD_DSP_THREE_EQ_HIGHGAIN = 2,
@@ -1164,10 +1163,10 @@ pub enum Enum_Unnamed50 {
     FMOD_DSP_THREE_EQ_HIGHCROSSOVER = 4,
     FMOD_DSP_THREE_EQ_CROSSOVERSLOPE = 5,
 }
-pub type FMOD_DSP_THREE_EQ = Enum_Unnamed50;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed51 {
+pub enum FMOD_DSP_FFT_WINDOW {
     FMOD_DSP_FFT_WINDOW_RECT = 0,
     FMOD_DSP_FFT_WINDOW_TRIANGLE = 1,
     FMOD_DSP_FFT_WINDOW_HAMMING = 2,
@@ -1175,36 +1174,36 @@ pub enum Enum_Unnamed51 {
     FMOD_DSP_FFT_WINDOW_BLACKMAN = 4,
     FMOD_DSP_FFT_WINDOW_BLACKMANHARRIS = 5,
 }
-pub type FMOD_DSP_FFT_WINDOW = Enum_Unnamed51;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed52 {
+pub enum FMOD_DSP_FFT {
     FMOD_DSP_FFT_WINDOWSIZE = 0,
     FMOD_DSP_FFT_WINDOWTYPE = 1,
     FMOD_DSP_FFT_SPECTRUMDATA = 2,
     FMOD_DSP_FFT_DOMINANT_FREQ = 3,
 }
-pub type FMOD_DSP_FFT = Enum_Unnamed52;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed53 {
+pub enum FMOD_DSP_ENVELOPEFOLLOWER {
     FMOD_DSP_ENVELOPEFOLLOWER_ATTACK = 0,
     FMOD_DSP_ENVELOPEFOLLOWER_RELEASE = 1,
     FMOD_DSP_ENVELOPEFOLLOWER_ENVELOPE = 2,
     FMOD_DSP_ENVELOPEFOLLOWER_USESIDECHAIN = 3,
 }
-pub type FMOD_DSP_ENVELOPEFOLLOWER = Enum_Unnamed53;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed54 {
+pub enum FMOD_DSP_CONVOLUTION_REVERB {
     FMOD_DSP_CONVOLUTION_REVERB_PARAM_IR = 0,
     FMOD_DSP_CONVOLUTION_REVERB_PARAM_WET = 1,
     FMOD_DSP_CONVOLUTION_REVERB_PARAM_DRY = 2,
 }
-pub type FMOD_DSP_CONVOLUTION_REVERB = Enum_Unnamed54;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed55 {
+pub enum FMOD_DSP_CHANNELMIX_OUTPUT {
     FMOD_DSP_CHANNELMIX_OUTPUT_DEFAULT = 0,
     FMOD_DSP_CHANNELMIX_OUTPUT_ALLMONO = 1,
     FMOD_DSP_CHANNELMIX_OUTPUT_ALLSTEREO = 2,
@@ -1213,10 +1212,10 @@ pub enum Enum_Unnamed55 {
     FMOD_DSP_CHANNELMIX_OUTPUT_ALL7POINT1 = 5,
     FMOD_DSP_CHANNELMIX_OUTPUT_ALLLFE = 6,
 }
-pub type FMOD_DSP_CHANNELMIX_OUTPUT = Enum_Unnamed55;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed56 {
+pub enum FMOD_DSP_CHANNELMIX {
     FMOD_DSP_CHANNELMIX_OUTPUTGROUPING = 0,
     FMOD_DSP_CHANNELMIX_GAIN_CH0 = 1,
     FMOD_DSP_CHANNELMIX_GAIN_CH1 = 2,
@@ -1251,28 +1250,28 @@ pub enum Enum_Unnamed56 {
     FMOD_DSP_CHANNELMIX_GAIN_CH30 = 31,
     FMOD_DSP_CHANNELMIX_GAIN_CH31 = 32,
 }
-pub type FMOD_DSP_CHANNELMIX = Enum_Unnamed56;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(i32)]
-pub enum Enum_Unnamed57 {
+pub enum FMOD_DSP_TRANSCEIVER_SPEAKERMODE {
     FMOD_DSP_TRANSCEIVER_SPEAKERMODE_AUTO = -1,
     FMOD_DSP_TRANSCEIVER_SPEAKERMODE_MONO = 0,
     FMOD_DSP_TRANSCEIVER_SPEAKERMODE_STEREO = 1,
     FMOD_DSP_TRANSCEIVER_SPEAKERMODE_SURROUND = 2,
 }
-pub type FMOD_DSP_TRANSCEIVER_SPEAKERMODE = Enum_Unnamed57;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed58 {
+pub enum FMOD_DSP_TRANSCEIVER {
     FMOD_DSP_TRANSCEIVER_TRANSMIT = 0,
     FMOD_DSP_TRANSCEIVER_GAIN = 1,
     FMOD_DSP_TRANSCEIVER_CHANNEL = 2,
     FMOD_DSP_TRANSCEIVER_TRANSMITSPEAKERMODE = 3,
 }
-pub type FMOD_DSP_TRANSCEIVER = Enum_Unnamed58;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed59 {
+pub enum FMOD_DSP_OBJECTPAN {
     FMOD_DSP_OBJECTPAN_3D_POSITION = 0,
     FMOD_DSP_OBJECTPAN_3D_ROLLOFF = 1,
     FMOD_DSP_OBJECTPAN_3D_MIN_DISTANCE = 2,
@@ -1283,7 +1282,7 @@ pub enum Enum_Unnamed59 {
     FMOD_DSP_OBJECTPAN_OVERALL_GAIN = 7,
     FMOD_DSP_OBJECTPAN_OUTPUTGAIN = 8,
 }
-pub type FMOD_DSP_OBJECTPAN = Enum_Unnamed59;
+
 pub type FMOD_DSP_STATE = Struct_FMOD_DSP_STATE;
 #[repr(C)]
 #[derive(Copy)]
@@ -1303,11 +1302,11 @@ impl ::std::default::Default for Struct_FMOD_DSP_BUFFER_ARRAY {
 pub type FMOD_DSP_BUFFER_ARRAY = Struct_FMOD_DSP_BUFFER_ARRAY;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed60 {
+pub enum FMOD_DSP_PROCESS_OPERATION {
     FMOD_DSP_PROCESS_PERFORM = 0,
     FMOD_DSP_PROCESS_QUERY = 1,
 }
-pub type FMOD_DSP_PROCESS_OPERATION = Enum_Unnamed60;
+
 #[repr(C)]
 #[derive(Copy)]
 pub struct Struct_FMOD_COMPLEX {
@@ -1323,12 +1322,12 @@ impl ::std::default::Default for Struct_FMOD_COMPLEX {
 pub type FMOD_COMPLEX = Struct_FMOD_COMPLEX;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed61 {
+pub enum FMOD_DSP_PAN_SURROUND_FLAGS {
     FMOD_DSP_PAN_SURROUND_DEFAULT = 0,
     FMOD_DSP_PAN_SURROUND_ROTATION_NOT_BIASED = 1,
     FMOD_DSP_PAN_SURROUND_FLAGS_FORCEINT = 65536,
 }
-pub type FMOD_DSP_PAN_SURROUND_FLAGS = Enum_Unnamed61;
+
 pub type FMOD_DSP_CREATE_CALLBACK =
     ::std::option::Option<unsafe extern "C" fn(dsp_state: *mut FMOD_DSP_STATE)
                               -> FMOD_RESULT>;
@@ -1585,7 +1584,7 @@ pub type FMOD_DSP_STATE_GETCLOCK =
                               -> FMOD_RESULT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed62 {
+pub enum FMOD_DSP_PARAMETER_TYPE {
     FMOD_DSP_PARAMETER_TYPE_FLOAT = 0,
     FMOD_DSP_PARAMETER_TYPE_INT = 1,
     FMOD_DSP_PARAMETER_TYPE_BOOL = 2,
@@ -1593,16 +1592,16 @@ pub enum Enum_Unnamed62 {
     FMOD_DSP_PARAMETER_TYPE_MAX = 4,
     FMOD_DSP_PARAMETER_TYPE_FORCEINT = 65536,
 }
-pub type FMOD_DSP_PARAMETER_TYPE = Enum_Unnamed62;
+
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
-pub enum Enum_Unnamed63 {
+pub enum FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE {
     FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE_LINEAR = 0,
     FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE_AUTO = 1,
     FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE_PIECEWISE_LINEAR = 2,
     FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE_FORCEINT = 65536,
 }
-pub type FMOD_DSP_PARAMETER_FLOAT_MAPPING_TYPE = Enum_Unnamed63;
+
 #[repr(C)]
 #[derive(Copy)]
 pub struct Struct_FMOD_DSP_PARAMETER_FLOAT_MAPPING_PIECEWISE_LINEAR {
@@ -1726,7 +1725,7 @@ impl ::std::default::Default for Struct_FMOD_DSP_PARAMETER_DESC {
 pub type FMOD_DSP_PARAMETER_DESC = Struct_FMOD_DSP_PARAMETER_DESC;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(i32)]
-pub enum Enum_Unnamed64 {
+pub enum FMOD_DSP_PARAMETER_DATA_TYPE {
     FMOD_DSP_PARAMETER_DATA_TYPE_USER = 0,
     FMOD_DSP_PARAMETER_DATA_TYPE_OVERALLGAIN = -1,
     FMOD_DSP_PARAMETER_DATA_TYPE_3DATTRIBUTES = -2,
@@ -1734,7 +1733,7 @@ pub enum Enum_Unnamed64 {
     FMOD_DSP_PARAMETER_DATA_TYPE_FFT = -4,
     FMOD_DSP_PARAMETER_DATA_TYPE_3DATTRIBUTES_MULTI = -5,
 }
-pub type FMOD_DSP_PARAMETER_DATA_TYPE = Enum_Unnamed64;
+
 #[repr(C)]
 #[derive(Copy)]
 pub struct Struct_FMOD_DSP_PARAMETER_OVERALLGAIN {
@@ -2529,8 +2528,10 @@ pub type FMOD_STUDIO_COMMANDREPLAY_CREATE_INSTANCE_CALLBACK =
                                                userdata:
                                                    *mut ::std::os::raw::c_void)
                               -> FMOD_RESULT>;
-#[link(name = "fmodstudio64")]
-#[link(name = "fmod64")]
+#[cfg_attr(windows, link(name = "fmodstudio64"))]
+#[cfg_attr(windows, link(name = "fmod64"))]
+#[cfg_attr(not(windows), link(name = "fmodstudio"))]
+#[cfg_attr(not(windows), link(name = "fmod"))]
 extern "C" {
     pub fn FMOD_Memory_Initialize(poolmem: *mut ::std::os::raw::c_void,
                                   poollen: ::std::os::raw::c_int,
